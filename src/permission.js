@@ -12,7 +12,8 @@ const whiteList = ["/login"]; // no redirect whitelist
 router.beforeEach(async (to, from, next) => {
   NProgress.start();
   document.title = getPageTitle(to.meta.title);
-  const hasToken = sessionStorage.getItem("token");
+  next();
+  // const hasToken = sessionStorage.getItem("token");
   // if (hasToken) {
   //   if (to.path === "/login") {
   //     next({ path: "/" });
